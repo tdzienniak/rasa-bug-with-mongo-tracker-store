@@ -10,4 +10,4 @@
 
 `./test.sh`
 
-The script will first insert new message and then predict action. `action_listen` gets predicted which is incorrect, because users message is already in the tracker, thus `utter_greet` should be predicted. There are also 2 action_listen action in a row at the start of conversation.
+The script will first insert new message and then predict action. `action_listen` gets predicted which is incorrect, because user's message is already in the tracker, thus `utter_greet` should be predicted. There are also 2 action_listen action in a row at the start of conversation.
