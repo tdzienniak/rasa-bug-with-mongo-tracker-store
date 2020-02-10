@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  mongo:
+    image: mongo:4.0.10-xenial
+  bot:
+    image: rasa/rasa:1.7.0
+    depends_on: 
+      - mongo
+    volumes:
+      - ./rasa:/app

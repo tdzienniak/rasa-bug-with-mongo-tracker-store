@@ -1,0 +1,4 @@
+tracker_store:
+   type: mongod
+   url: mongodb://mongo:27017
+   db: rasa
