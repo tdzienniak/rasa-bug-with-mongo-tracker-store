@@ -3,9 +3,14 @@ version: '3.7'
 services:
   mongo:
     image: mongo:4.0.10-xenial
+    ports:
+      - 27060:27017
   bot:
     image: rasa/rasa:1.7.0
     depends_on: 
       - mongo
     volumes:
       - ./rasa:/app
+    ports:
+      - 5005:5005
+    command: run --enable-api --debug

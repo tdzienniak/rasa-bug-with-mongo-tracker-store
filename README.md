@@ -1,9 +1,13 @@
 # This repository demonstrates bug with Rasa 1.7.0.
 
-To run bot with MongoDB tracker store:
+# How to reproduce bug:
 
-`docker-compose run --rm bot shell --endpoints endpoints-with-mongo.yml --debug`
+1. Run bot with MongoDB tracker store:
 
-To run bot without MongoDB tracker store:
+`docker-compose up`
 
-`docker-compose run --rm bot shell --debug`
+2. Run test shell script:
+
+`./test.sh`
+
+The script will first insert new message and then predict action. `action_listen` gets predicted which is incorrect, because users message is already in the tracker, thus `utter_greet` should be predicted. There are also 2 action_listen action in a row at the start of conversation.
