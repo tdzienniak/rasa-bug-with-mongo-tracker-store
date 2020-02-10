@@ -4,7 +4,7 @@ services:
   mongo:
     image: mongo:4.0.10-xenial
     ports:
-      - 27060:27017
+      - 27017:27017
   bot:
     image: rasa/rasa:1.7.0
     depends_on: 
